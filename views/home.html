@@ -1,0 +1,33 @@
+<div class="container" id="content">
+    <div class="row">
+            <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                      <h1 class="display-4">Home Page</h1>
+                      <p class="lead">{{obj.description}}</p>
+                    </div>
+            </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" ng-repeat="data in obj.rows track by $index">
+            <div class="card-group" ng-click="navToDetails(data)">
+                <div class="card" >
+                      <!-- <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTarUnNNDgYLrZFxsEpgVnnXwzI3J5ffDHrSqql_TUHwxVdvAyj" alt="Card image cap"> -->
+                      <img class="card-img-top" image-lazy-src="{{data.imageHref}}" src='assets/35.gif'/>
+                      <div class="card-body">
+                        <h5 class="card-title">{{data.title}}</h5>
+                        <p class="card-text">{{data.description}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">{{data.url}}</small>
+                      </div>
+               </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" ng-click="generate()">Generate PDF</button>
+      </div>
+
+    </div>
+  </div>
